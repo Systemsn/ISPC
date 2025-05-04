@@ -248,5 +248,49 @@ def desafio_15():
         if pregunta =="no":
             print("Saliendo del programa ")
             break
+
+#Ejercicio Pagina 59 
+import random
+def desafio_16():
+    #Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario adivinar el número. El programa debe brindar pistas
+    #(ej. el número secreto es mayor) y debe continuar pidiendo al usuario que adivine hasta que acierte. Al finalizar, debe mostrar el número de  intentos.
+   
+    numero_random= random.randint(1,100)
+    numero_random_pista = random.randint(1,10)
+    pista = numero_random-numero_random_pista
+    intentos = 0
+    
+    print(f"PISTA : el numero es mayor a {pista} ")
+    if numero_random % 2 == 0:
+        print("Tambien el numero es par")
         
-desafio_15()  
+    else:
+        print ("Tambien el numero es impar")
+       
+  
+    while True:
+        
+        entrada = input("Ingrese un numero: ")
+        
+
+        if not entrada.isdigit():
+         print("Error: Ingrese solo numeros positivos")
+         continue
+     
+        intentos +=1   
+        
+        numero = int(entrada)
+        
+        if numero == numero_random:
+            print("Ganaste!")
+            
+            print(f"Fueron {intentos} intentos ")
+            break
+        else: 
+            print("Fallaste!")
+        
+            
+       
+
+        
+         
