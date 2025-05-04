@@ -33,7 +33,7 @@ def desafio_3():
     
     print(hipotenusa)
 
-def desafio_3():
+def desafio_4():
     #4. Escribe un programa que pida al usuario su año de nacimiento, calcule su edad y genere un mensaje de saludo personalizado que incluya su nombre y la edad calculada.
     anio = int(input("Ingrese su año de nacimiento: "))
     
@@ -44,7 +44,7 @@ def desafio_3():
 
 # Ejercicios de pagina 46
 
-def desafio_4():
+def desafio_5():
     #1. Escribe un programa que a partir de un número entero positivo, muestre por pantalla si es par o impar.
     verificar = True
     while verificar:
@@ -63,7 +63,7 @@ def desafio_4():
             print("Muchas gracias, hasta pronto.")
             verificar=False
             
-def desafio_5():
+def desafio_6():
     #2. Escribe un programa que a partir de un número entero positivo, muestre por pantalla si es primo o no.
     numero = int(input("Ingrese un numero:"))
    
@@ -83,7 +83,7 @@ def desafio_5():
     else:
         print(f"El número {numero} no es primo")
    
-def desafio_6():
+def desafio_7():
     #3. Escribe un programa que permita realizar la división de dos números siempre y cuando el denominador no sea 0.
     verificar = True
     while verificar:
@@ -107,7 +107,6 @@ def desafio_6():
             verificar =False
     
 # Ejercicios pagina 49
-
 
 def desafio_8():
     #1. Escribe un programa que solicite tres lados de un triángulo e indique si es equilátero, isósceles o escaleno.
@@ -180,5 +179,74 @@ def desafio_11():
             print("Saliendo...")
             break
         
-desafio_11()
+#Ejercicio pagina 52
+
+def desafio_12():
+   # 1. Escribe un programa que sume todos los números de una lista y luego responde ¿Qué tipo de variable utilizamos para resolver?
+
+          numero_lista=[]
+
+          suma = 0
+          verificar = True
+          while verificar:
+            entrada = input("Ingresa un numero: ")
+            if not entrada.isdigit(): # verificamos que sean numero los que ingresa 
+                print("Error : Ingrese solo numeros mayor a 0")
+                continue
+           
+            numero = int(entrada) #convertimos la entrada(String) a entero(int)
+            suma +=numero          # Suma los numeros convertidos
+            numero_lista.append(numero) #agregamos en la lista el numero ingresado
+            
+            pregunta = input("¿Quiere agregar otro numero? Si o No: " ).lower()
+            if pregunta == "no":
+                print("Saliendo del  programa")
+                verificar = False
+                
+          print(f"la Sumatoria de la lista es: {suma}")
+          print(f"Su lista es: {numero_lista}")
           
+          # RESPUESTA: 
+          # Se utilizan los siguientes tipos de variables:
+          # - int: para almacenar los números ingresados y calcular la suma.
+          # - list: para guardar todos los números ingresados.
+          # - bool: para controlar el bucle while.
+          # - str: para leer las entradas del usuario desde el teclado para evitar error de tipeo.
+
+def desafio_13():
+    #2. Escribe un programa que imprima el cuadrado de los números del 1 al 10.
+    for i in range(1,11):
+        
+        cuadrado = i**2
+        
+        print(f"El Cuadrado de {i} es: {cuadrado}")
+        
+def desafio_14():
+    #3. Escribe un programa que cuente los caracteres de una cadena de texto proporcionada por el usuario utilizando el for.
+    cadena = input("Ingrese una frase: ")
+    contador = 0
+    
+    for caracter in cadena:
+        contador+=1
+     
+        
+    print(f"el tamaño de la cadena es : {contador}")
+    print(f"La cadena es: {cadena}")
+    
+def desafio_15():   
+#4. Escribe un programa que cuente el número de vocales en una cadena de texto proporcionada por el usuario.    
+    while True:
+        cadena = input("Ingresa una frase: ")
+    
+        contador = 0
+        for caracter in cadena:
+            if caracter == "a" or caracter == "e" or caracter =="i" or caracter == "o" or caracter == "u":
+             contador +=1
+     
+        print(f"La cadena tiene {contador} vocales") 
+        pregunta = input("¿Quiere ingresar otra frase? Si o No: ").lower().strip
+        if pregunta =="no":
+            print("Saliendo del programa ")
+            break
+        
+desafio_15()  
