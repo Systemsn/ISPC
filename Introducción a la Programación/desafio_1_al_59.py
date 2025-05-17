@@ -271,7 +271,11 @@ def desafio_16():
     while True:
         
         entrada = input("Ingrese un numero: ")
-        
+        print("NIVELES de ACCESO")
+        pritn("1.invitado ")
+        print("2.Niños")
+        print("3.padres ")
+       
 
         if not entrada.isdigit():
          print("Error: Ingrese solo numeros positivos")
