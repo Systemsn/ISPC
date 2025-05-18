@@ -27,7 +27,7 @@ if __name__ == "__main__":
                         print("\nOpcion 1 : Agregar nuevo dispositivo")
                         print("Opcion 2 : Buscar dispositivo")
                         print("Opcion 3 : Mostrar todo los dispositivos")
-                        print("Opcion 4 : Eliminar Dispositivos")
+                        print("Opcion 4 : Eliminar Dispositivo")
                         print("Opcion 5 : Volver al menu anterior")
                         opcion = input("Ingrese la opcion: ")
                         match opcion:
