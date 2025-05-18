@@ -14,12 +14,12 @@ if __name__ == "__main__":
         
         print("Opcion 1 : Panel Dispositivos")
         print("Opcion 2 : Panel de Iluminacion")
-        print("Opcion 6 : Salir del programa")
+        print("Opcion 3 : Salir del programa")
         
-        opcion  = int(input("Ingrese la opcion: ")) # Guardamos la opcion del usuario 
+        opcion  = input("Ingrese la opcion: ") # Guardamos la opcion del usuario 
         match opcion:# ejecuta la opcion del usuario
     
-                case 1 : 
+                case "1" : 
                     while True : 
                         print("\n::::::::::::::::::::::::::::::")
                         print("::    PANEL DISPOSITIVOS    ::")
@@ -29,10 +29,10 @@ if __name__ == "__main__":
                         print("Opcion 3 : Mostrar todo los dispositivos")
                         print("Opcion 4 : Eliminar Dispositivos")
                         print("Opcion 5 : Volver al menu anterior")
-                        opcion = int(input("Ingrese la opcion: "))
+                        opcion = input("Ingrese la opcion: ")
                         match opcion:
                             
-                            case 1: 
+                            case "1": 
                          
                                 # desde la linea 21 al 33 creamos las variables y pedimos al usuario por teclado.
         
@@ -66,7 +66,7 @@ if __name__ == "__main__":
                                 modulo.agregar(nombre_dispositivo,marca,modelo,tipo,color,temperatura,tiempo,consumo_energia,voltaje,ubicacion,estado) # Aqui agregamos los datos a la funcion agregar.
 
 
-                            case 2 : 
+                            case "2" : 
 
                                 busqueda = input("\nIngrese el nombre del dispositivo que desea encontrar: ") # ingresamos el dispositivo a buscar
                                 print("\n::::::::::::::::::::::::::::::")
@@ -76,14 +76,14 @@ if __name__ == "__main__":
                                 print(modulo.buscar(busqueda))
                                 pass
         
-                            case 3 : 
+                            case "3" : 
                                 print("\n::::::::::::::::::::::::::::::")
                                 print("::  Todos los dispositivos  ::")
                                 print("::::::::::::::::::::::::::::::")
                                 modulo.mostrar()# aqui imprimimos la funcion donde se muestra la listas y sus datos
                  
     
-                            case 4 :
+                            case "4" :
                                 
                                 
                                 busqueda = input("\nIngrese el dispositivo que desea eliminar: ") # ingresamos el dispositivo a eliminar 
@@ -94,14 +94,14 @@ if __name__ == "__main__":
                                 print(modulo.eliminar(busqueda)) # Aqui imprimimos y llamamos a la funcion para que elimine el dispositivo
                                 pass 
                                 
-                            case 5: 
+                            case "5": 
                                 break
                             case _:
                                 # Este es un caso por default donde si no ingresan correctamente las opciones que indica el menu.
                                 print("Error : ingreso una opcion no valida ") # imprimimos el error 
                                 continue
         
-                case 2 :  
+                case "2" :  
                     while True:
                         
                         print("\n::::::::::::::::::::::::::::::")
@@ -113,9 +113,9 @@ if __name__ == "__main__":
                         print("Opcion 3 : Configurar Modo noche")
                         print("Opcion 4 : Configurar Modo Ahorro de Energia")
                         print("Opcion 5 : Volver al menu principal")
-                        opcion = int(input("Ingrese una opcion: "))
+                        opcion = input("Ingrese una opcion: ")
                         match opcion :
-                            case 1: 
+                            case "1": 
                                 print("\n:::::::::::::::::::::::::::::::::")
                                 print(":: PANEL DE PRENDIDO Y APAGADO ::")
                                 print(":::::::::::::::::::::::::::::::::")
@@ -131,19 +131,19 @@ if __name__ == "__main__":
                                 elif opcion ==2:
                                     busqueda = input(" Que habitacion quiere pagar las luces?: ")
                                     modulo.apagar_luces()
-                            case 2:
+                            case "2":
                                 
-                                print("\n:::::::::::::::::::::::::::::::::")
+                                print("\n:::::::::::::::::::::::::")
                                 print(":: PANEL MOSTRAR LUCES ::")
-                                print(":::::::::::::::::::::::::::::::::")
+                                print(":::::::::::::::::::::::::")
                                 print("1.Mostrar habitaciones apagadas")
                                 print("2.Mostrar habitaciones prendidas")
                                 print("3.Mostrar todas las habitaciones")
                                 print("4.Volver al menu anterior")
-                                opcion = int(input("Ingrese una opcion: "))
+                                opcion = input("Ingrese una opcion: ")
                                 
                                 match opcion:
-                                    case 1 : 
+                                    case "1" : 
                                         print("\n:::::::::::::::::::")
                                         print(":: LUCES APAGADA ::")
                                         print(":::::::::::::::::::")
@@ -151,15 +151,15 @@ if __name__ == "__main__":
                                         
                                         pass
                                     
-                                    case 2:
-                                        print("\n:::::::::::::::::::")
+                                    case "2":
+                                        print("\n:::::::::::::::::::::")
                                         print(":: LUCES PRENDIDAS ::")
-                                        print(":::::::::::::::::::")
+                                        print(":::::::::::::::::::::")
                                         modulo.mostrar_luces_prendidos()
                                         
                                         pass
                                     
-                                    case 3: 
+                                    case "3": 
                                         print("\n::::::::::::::::::::::::")
                                         print(":: TODAS HABITACIONES ::")
                                         print("::::::::::::::::::::::::")
@@ -167,47 +167,55 @@ if __name__ == "__main__":
                                         
                                         pass
                                     
-                                    case 4: 
+                                    case "4": 
                                     
                                         break
                                     case _:
                                         print("Error : Ingreso una opcion no valida")
                                     
-                            case 3: 
+                            case "3": 
                                 print("\n:::::::::::::::::::::::::::::")
                                 print(":: CONFIGURACION MODO NOCHE ::")
                                 print("::::::::::::::::::::::::::::::")
                                         
-                                hora_prendido= int(input("Ingrese la hora a que se prenderan las luces "))
+                                hora_prendido= int(input("Ingrese la hora a que se prenderan las luces: "))
+                                minuto_prendio = int(input("Ingrese los minutos: "))
                                 while True:
                                             
                                         
                                     ubicacion_exterior = input("Ingrese la ubicacion de la casa: ")
     
-                                    modulo.luces_modo_Noche(hora_prendido,ubicacion_exterior)
+                                    modulo.luces_modo_Noche(hora_prendido,minuto_prendio,ubicacion_exterior)
                                             
                                     pregunta = input("Quiere Ingresar otra ubicacion de la casa? SI O NO").lower().strip()
                                     if pregunta == "no":
                                         break
                                        
                                     
-                            case 4:
+                            case "4":
                                 print("\n::::::::::::::::::::::::::::::")
                                 print(":: CONFIGURACION MODO AHORRO ::")
                                 print(":::::::::::::::::::::::::::::::")
                                         
-                                hora_apagado= int(input("Ingrese la hora a que se apagaran las luces "))
+                                hora_apagado= int(input("Ingrese la hora a que se apagaran las luces: "))
+                                minuto_apagado = int(input("Ingrese los minutos: "))
                                 while True:
                                             
                                         
-                                    ubicacion_exterior = input("Ingrese la ubicacion de la casa: ")
+                                    ubicacion_exterior = input("Ingrese la ubicacion de la casa: ").lower()
     
-                                    modulo.luces_modo_Noche(hora_apagado,ubicacion_exterior)
+                                    modulo.luces_modo_Noche(hora_apagado,minuto_apagado,ubicacion_exterior)
                                             
-                                    pregunta = input("Quiere Ingresar otra ubicacion de la casa? SI O NO").lower().strip()
+                                    pregunta = input("\nQuiere Ingresar otra ubicacion de la casa? SI O NO: ").lower().strip()
                                     if pregunta == "no":
                                         break
-                                    
+                            case "5": 
+                                break
+                case "3":
+                    break
+                case _:
+                    print("ERROR : Ingreso una opcion incorrecta")
+            
                     
         
         

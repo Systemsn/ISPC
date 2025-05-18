@@ -96,7 +96,7 @@ def mostrar_luces():
             if dispositivo["estado"] == 0:
                 print(f'Las luces de {dispositivo["ubicacion"]} esta  apagado')
             elif dispositivo["estado"] ==1 :
-                print(f'Las luces de {dispositivo["ubicacion"]} esta  prendididas ')
+                print(f'Las luces de {dispositivo["ubicacion"]} esta  prendido ')
 
 def luces_modo_Noche(hora_prendido,minuto_prendido,ubicacion_exterior):
     # obtenemos la hora actual del sistema
@@ -123,7 +123,7 @@ def luces_modo_Noche(hora_prendido,minuto_prendido,ubicacion_exterior):
         if not encendido:
             print(f" No se encontró ningún dispositivo de iluminación en '{ubicacion_exterior}'.")
     else:
-        print(f" No es la hora configurada aún. Hora actual: {hora_actual}, hora configurada: {hora_prendido}")
+        print(f" No es la hora configurada aún. Hora actual: {hora_actual} minito actual {minuto_actual}, hora configurada: {hora_prendido} minuto configurado {minuto_prendido}")
                  
    
             
@@ -153,5 +153,5 @@ def luces_modo_ahorro(hora_apagado,minuto_apagado,ubicacion_exterior):
         if not encendido:
             print(f" No se encontró ningún dispositivo de iluminación en '{ubicacion_exterior}'.")
     else:
-        print(f" No es la hora configurada aún. Hora actual: {hora_actual}, hora configurada: {hora_apagado}")
+        print(f" No es la hora configurada aún. Hora actual: {hora_actual} minuto actual: {minuto_actual}, hora configurada: {hora_apagado} minuto configurado: {minuto_apagado}")
                  
