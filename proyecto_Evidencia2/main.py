@@ -11,16 +11,17 @@ if __name__ == "__main__":
         print("::      PANEL PRINCIPAL     ::")
         print("::::::::::::::::::::::::::::::")
         
-        
         print("Opcion 1 : Panel Dispositivos")
         print("Opcion 2 : Panel de Iluminacion")
-        print("Opcion 3 : Salir del programa")
+        print("Opcion 3 : Calefacion")
+        print("Opcion 4 : Salir del programa")
         
         opcion  = input("Ingrese la opcion: ") # Guardamos la opcion del usuario 
         match opcion:# ejecuta la opcion del usuario
     
                 case "1" : 
                     while True : 
+                        # Creamos un panel para dispositivos 
                         print("\n::::::::::::::::::::::::::::::")
                         print("::    PANEL DISPOSITIVOS    ::")
                         print("::::::::::::::::::::::::::::::")
@@ -34,7 +35,7 @@ if __name__ == "__main__":
                             
                             case "1": 
                          
-                                # desde la linea 21 al 33 creamos las variables y pedimos al usuario por teclado.
+                                # Ingresamos los datos para pasarlos como parametro a las funciones 
         
                                 nombre_dispositivo = input("\nIngrese el nombre del Dispositivo: ").lower()  
                     
@@ -47,12 +48,14 @@ if __name__ == "__main__":
                                 print("::::::::::::::::::::::::::::::")
                                 print("1. Electrodomesticos")
                                 print("2. Iluminacion")
-                                print("3. Seguridad")
+                                print("3. Calefacion")
+                                print("4. Seguridad")
                                
                                 tipo = int(input("Ingrese el tipo: "))
                     
                                 color = input("Ingrese el color : ").lower()
-                                temperatura = int(input("Ingrese la temperatura en º C | Si no tiene ingrese 0 : "))
+                                
+                                temperatura = 0
                                 
                                 tiempo = 0
                     
@@ -211,16 +214,24 @@ if __name__ == "__main__":
                                         break
                             case "5": 
                                 break
+                
                 case "3":
+                    print("\n::::::::::::::::::::::::::")
+                    print("::  PANEL DE CALEFACCION  ::")
+                    print("::::::::::::::::::::::::::::")
+                    
+            
+                    temperatura_hoy = int(input("Ingrese la temepratura de hoy : "))
+                    modulo.calefacion_ambiente(temperatura_hoy)
+                    
+                case "4":
                     break
+                
                 case _:
                     print("ERROR : Ingreso una opcion incorrecta")
             
                     
         
         
-        #pregunta = input("Quiere ingresar otra opcion?: ").lower().strip()
-       # if pregunta == "no":
-        # break
-        
+     
     
