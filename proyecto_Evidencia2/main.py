@@ -15,6 +15,7 @@ if __name__ == "__main__":
         print("Opcion 2 : Panel de Iluminacion")
         print("Opcion 3 : Calefacion")
         print("Opcion 4 : Salir del programa")
+        print("Opcion 5 : Gestor de ubicacion")
         
         opcion  = input("Ingrese la opcion: ") # Guardamos la opcion del usuario 
         match opcion:# ejecuta la opcion del usuario
@@ -34,40 +35,49 @@ if __name__ == "__main__":
                         match opcion:
                             
                             case "1": 
-                         
+                                
+                                
+                                
                                 # Ingresamos los datos para pasarlos como parametro a las funciones 
-        
-                                nombre_dispositivo = input("\nIngrese el nombre del Dispositivo: ").lower()  
+                                while modulo.Validar_habitaciones():
+                
+                                    nombre_dispositivo = input("\nIngrese el nombre del Dispositivo: ").lower()  
                     
-                                marca = input("Ingrese la marca del dispositivo: ").lower()
+                                    marca = input("Ingrese la marca del dispositivo: ").lower()
                     
-                                modelo = input("Ingrese el modelo: ").lower()
+                                    modelo = input("Ingrese el modelo: ").lower()
                                 
-                                print("\n::::::::::::::::::::::::::::::")
-                                print("::  TIPOS DE DISPOSITIVOS   ::")
-                                print("::::::::::::::::::::::::::::::")
-                                print("1. Electrodomesticos")
-                                print("2. Iluminacion")
-                                print("3. Calefacion")
-                                print("4. Seguridad")
+                                    print("\n::::::::::::::::::::::::::::::")
+                                    print("::  TIPOS DE DISPOSITIVOS   ::")
+                                    print("::::::::::::::::::::::::::::::")
+                                    print("1. Electrodomesticos")
+                                    print("2. Iluminacion")
+                                    print("3. Calefacion")
+                                    print("4. Seguridad")
                                
-                                tipo = int(input("Ingrese el tipo: "))
+                                    tipo = int(input("Ingrese el tipo: "))
                     
-                                color = input("Ingrese el color : ").lower()
+                                    color = input("Ingrese el color : ").lower()
                                 
-                                temperatura = 0
+                                    temperatura = 0
                                 
-                                tiempo = 0
+                                    tiempo = 0
                     
-                                consumo_energia = int(input("ingrese el consumo de energia del dispositivo: "))
+                                    consumo_energia = int(input("ingrese el consumo de energia del dispositivo: "))
                     
-                                voltaje = int(input("Ingrese el voltaje del Electrodomostico: "))
+                                    voltaje = int(input("Ingrese el voltaje del Electrodomostico: "))
+                                    
+                                    modulo.Mostrar_Habitaciones()
                                 
-                                ubicacion = input("Ingrese la ubicacion donde se colocara: ").lower()
-                                estado = 0 
+                                    ubicacion = input("Ingrese la ubicacion donde se colocara: ").lower()
+                                    estado = 0 
                     
-                                modulo.agregar(nombre_dispositivo,marca,modelo,tipo,color,temperatura,tiempo,consumo_energia,voltaje,ubicacion,estado) # Aqui agregamos los datos a la funcion agregar.
-
+                                    modulo.agregar(nombre_dispositivo,marca,modelo,tipo,color,temperatura,tiempo,consumo_energia,voltaje,ubicacion,estado) # Aqui agregamos los datos a la funcion agregar.
+                                    pregunta = input("Quieres Ingresar otro dispositivo? SI o NO").lower().strip()
+                                    
+                                    if pregunta == "no":
+                                        break
+                                    
 
                             case "2" : 
 
@@ -227,6 +237,42 @@ if __name__ == "__main__":
                 case "4":
                     break
                 
+                
+                case "5":
+                    print("\n::::::::::::::::::::::")
+                    print(":: Panel Ubicacion  ::")
+                    print("::::::::::::::::::::::")
+                    print("Opcion 1: Crear ubicacion")
+                    print("Opcion 2 : Mostrar Ubicacion")
+                    print("Opcion 3 : eliminar ubicacion")
+                    
+                    opcion = input("Ingrese una Opcion: ")
+                    
+                    match opcion:
+                        
+                        case "1": 
+                            ubicacion = input("Ingrese una ubicacion: ")
+                            modulo.Crear_ubicacion(ubicacion)
+                            pass
+                        case "2": 
+                            modulo.Mostrar_Habitaciones()
+                            pass
+                    
+                        case "3":
+                            
+                            busqueda = input("Ingrese la ubicacion a eliminar: ")
+                            
+                            modulo.eliminar_ubicacion(busqueda)
+                            
+                  
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                    
                 case _:
                     print("ERROR : Ingreso una opcion incorrecta")
             

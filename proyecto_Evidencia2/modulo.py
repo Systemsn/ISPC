@@ -1,5 +1,6 @@
 from datetime import datetime
 list_dispositivo =[]
+list_habitaciones =[]
 
  # Funcion para agregar Dispositivos
 def agregar(nombre_dispositivo,marca,modelo,tipo,color,temperatura,tiempo,consumo_energia,voltaje,ubicacion,estado):
@@ -183,7 +184,41 @@ def calefacion_ambiente(temperatura_hoy):
                     dispositivo["temperatura "]= 20
                     print(f'Se prendio automaticamente el {dispositivo["nombre_dispositivo"]} ahora la temperatura es de 20ºC ')
               
+
+# Comenzando Nueva Funciones para Gestion de habitaciones
+
+def Crear_ubicacion(ubicacion):
+    
+    ubicacion_casa={"ubicacion":ubicacion}
+    
+    list_habitaciones.append(ubicacion_casa)
+    print("Se Agrego con exito")
+
+def Validar_habitaciones():
+    Validar = False
+    while True:
+        
+        if len(list_habitaciones) >=1 :
             
+            
+            return True
+        else:
+            print("\nNo hay ubicaciones- Agrege al menos una")
+            return False
+
+
+def Mostrar_Habitaciones():
+    
+    for ubicacion in list_habitaciones:
+        print(ubicacion)
+     
+def eliminar_ubicacion(busqueda):
+
+    for ubicaciones in list_habitaciones:
+        
+        if ubicaciones["ubicacion"] == busqueda:
+            
+            list_habitaciones.remove(ubicaciones)
             
             
      
