@@ -523,15 +523,35 @@ if __name__ == "__main__":
                         
             #Panel  Registrar Usuario
             case 2 : 
-                    
+                    verificar_bucle_dni = True
+                    verificar_bucle_email = True
                     print("\n::::::::::::::::::::::::::::::")
                     print("::      Registro Usuario    ::")
                     print("::::::::::::::::::::::::::::::")
                     
                     usuario = input("Ingrese el usuario: ").strip()
                     contrasenia = input("Ingrese su contraseña: ").strip()
-                    email = input("Ingrese su Email: ")
-                    dni = input("Ingrese su DNI: ").strip()
+                    while verificar_bucle_email: # verificacmos que el email que contaga el caracater @ para que sea valido
+                        
+                        email_verificar  = input("Ingrese su Email: ").strip()
+                        
+                        for caracter in email_verificar:
+                            if caracter == "@":
+                                verificar_bucle_email = False
+                                email = email_verificar
+                        if verificar_bucle_email == True :
+                            print("Error el Email no es valido Tiene que contiener el caracter @")     
+
+                    while verificar_bucle_dni : # verificamos que tenga la cantidad de 8 digitos. 
+                        dni_verificar = input("Ingrese su DNI: ").strip()
+                    
+                        if len(dni_verificar) == 8 :
+                            dni = int(dni_verificar)
+                            verificar_bucle_dni = False
+                        else :
+                            print ("El DNI no tiene los digitos correspondientes ")
+                            continue 
+    
                     numero_secreto = input("Ingrese un numero secreto para recuperar contraseña: ").strip()
                     
                     if contador==0 :
