@@ -268,7 +268,7 @@ def verificar_rol(usuario_validar):
             return False
         
 # cambiar de rol de usuario
-def cambiar_rol_usuario(busqueda):
+def cambiar_rol_usuario_a_admin(busqueda):
     
     for usuario in list_usuario:
         
@@ -277,5 +277,14 @@ def cambiar_rol_usuario(busqueda):
             usuario["rol"] = 1
             print("se cambio el rol con exito")
 
+
+def cambiar_rol_admin_a_usuario(busqueda):
+    
+    for usuario in list_usuario:
+        
+        if usuario["usuario"] == busqueda:
+            
+            usuario["rol"] = 0
+            print("se cambio el rol con exito")
         
         

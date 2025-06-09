@@ -509,9 +509,27 @@ if __name__ == "__main__":
                                                 print("\n:::::::::::::::::::::")
                                                 print("::  Cambio de Rol   ::")
                                                 print("::::::::::::::::::::::")
-                                                busqueda = input("Ingrese el usuario para cambiar Rol: ")
+                                                print("Opcion 1 : Dar Rol De administrador ")
+                                                print ("Opcion 2 : Dar Rol de Usuario Standar")
+                                                print("Opcion 3 : Volver al menu anterior")
+                                                opcion = input("Ingrese una opcion ")
                                                 
-                                                modulo.cambiar_rol_usuario(busqueda)
+                                                if not opcion.isdigit():
+                                                    print("Error : Ingrese digitos numericos")
+                                                    continue
+                                                else : 
+                                                    convertir = int(opcion)
+                                                
+                                                match convertir:
+                                                    case 1 :
+                
+                                                        busqueda = input("Ingrese el usuario para cambiar Rol: ")
+                                                
+                                                        modulo.cambiar_rol_usuario_a_admin(busqueda)
+                                                    case 2 : 
+                                                        busqueda = input("Ingrese el usuario para cambiar Rol: ")
+                                                        modulo.cambiar_rol_admin_a_usuario(busqueda)
+                                                        
                                             case 3 : 
                                                 break
                                             case _:
