@@ -1,6 +1,5 @@
 
 import modulo # importamos todos los metodos del modulo.py
-import getpass
 
 if __name__ == "__main__":
     
@@ -30,7 +29,7 @@ if __name__ == "__main__":
                 print(":::::::::::::::::::::")
                     
                 usuario_validar = input("ingrese su usuario: ")
-                contrasenia_validar = modulo.verificar_contraseña
+                contrasenia_validar = input("Ingrese su contraseña: ")
                 modulo.verificar_contraseña(usuario_validar,contrasenia_validar)
                         
                 if modulo.verificar_contraseña(usuario_validar,contrasenia_validar) == True and modulo.verificar_rol(usuario_validar) == True :
@@ -171,7 +170,8 @@ if __name__ == "__main__":
                             print("Opcion 2 : Panel de Iluminacion")
                             print("Opcion 3 : Calefacion")
                             print("Opcion 4 : Gestor de ubicacion")
-                            print("Opcion 5 : Salir del programa")
+                            print("Opcion 5 : Gestor de usuario")
+                            print("Opcion 6 : Salir del programa")
         
                             opcion_admin  = input("Ingrese la opcion: ") # Guardamos la opcion del usuario 
                         
@@ -180,7 +180,7 @@ if __name__ == "__main__":
                             else :
                                 convertir_numero = int(opcion_admin) # tranformamos la opcion en entero
                             
-                            match convertir_numero:# ejecuta la opcion del usuario
+                            match convertir_numero: # ejecuta la opcion del usuario
     
                                 case 1 : 
                                     while True : 
@@ -405,7 +405,8 @@ if __name__ == "__main__":
                                                     pregunta = input("\nQuiere Ingresar otra ubicacion de la casa? SI O NO: ").lower().strip()
                                                     if pregunta == "no":
                                                         break
-                                                    
+                                            
+                                                  
                                             case 5: 
                                                 break
                 
@@ -479,7 +480,43 @@ if __name__ == "__main__":
                                             case _: 
                                                 print("Error ingreso una opcion invalida")
                                                 continue
-                                case 5: 
+                                            
+                                case 5:
+                                    while True:
+                                        print("\n::::::::::::::::::::::::::::")
+                                        print("::  Configuracion Usuario  ::")
+                                        print(":::::::::::::::::::::::::::::")
+                                        print("Opcion 1 : Mostrar todos los usuarios")
+                                        print("Opcion 2 : Cambiar rol de un usuario")
+                                        print("Opcion 3 : Volver al menu anterior")
+                                    
+                                        opcion = input("Ingrese una opcion: ")
+                                    
+                                        if not opcion.isdigit():
+                                            print("Error: Ingrese Digitos numericos")
+                                            continue
+                                        else: 
+                                            convertir = int(opcion)
+                                    
+                                        match convertir :
+                                        
+                                            case 1: 
+                                                print("\n::::::::::::::::::::::::::::::")
+                                                print("::  TODOS LOS USUARIOS   ::")
+                                                print("::::::::::::::::::::::::::::::")
+                                                modulo.mostrar_usuarios()
+                                            case 2: 
+                                                print("\n:::::::::::::::::::::")
+                                                print("::  Cambio de Rol   ::")
+                                                print("::::::::::::::::::::::")
+                                                busqueda = input("Ingrese el usuario para cambiar Rol: ")
+                                                
+                                                modulo.cambiar_rol_usuario(busqueda)
+                                            case 3 : 
+                                                break
+                                            case _:
+                                                print("Ingreso una opcion invalida")
+                                case 6: 
                                     break
                     case _:
                         print("ERROR : Ingreso una opcion incorrecta")
@@ -493,7 +530,7 @@ if __name__ == "__main__":
                     
                     usuario = input("Ingrese el usuario: ").strip()
                     contrasenia = input("Ingrese su contraseña: ").strip()
-                    email = input("Ingrese su Email: ").strip
+                    email = input("Ingrese su Email: ")
                     dni = input("Ingrese su DNI: ").strip()
                     numero_secreto = input("Ingrese un numero secreto para recuperar contraseña: ").strip()
                     

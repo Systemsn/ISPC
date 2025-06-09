@@ -1,5 +1,4 @@
 from datetime import datetime
-import getpass
 list_dispositivo =[]
 list_habitaciones =[]
 list_usuario=[]
@@ -163,7 +162,7 @@ def luces_modo_ahorro(hora_apagado,minuto_apagado,ubicacion_exterior):
     else:
         print(f" No es la hora configurada aún. Hora actual: {hora_actual} minuto actual: {minuto_actual}, hora configurada: {hora_apagado} minuto configurado: {minuto_apagado}")
  
-
+# funcion para detectar si hay o no dispositivos de tipo calefacion
 def validar_calefacion():
     contador =0
     if len(list_dispositivo)>=1  :
@@ -173,9 +172,7 @@ def validar_calefacion():
                 return True
     else :
         return False
-        
-    
-    
+           
 # Funcion para activar frio o calor 
 def calefacion_ambiente(temperatura_hoy):
 
@@ -217,7 +214,6 @@ def Validar_habitaciones():
         print("\nNo hay ubicaciones- Agrege al menos una")
         return False
 
-
 def Mostrar_Habitaciones():
     
     for ubicacion in list_habitaciones:
@@ -231,13 +227,15 @@ def eliminar_ubicacion(busqueda):
             
             list_habitaciones.remove(ubicaciones)
             print("Se  elimino con exito")
-
-
-
+            
 def registrar_usuario(usuario,contrasenia,email,dni,numero_secreto,rol):
+    
     # guardamos el diccionario dentro de la lista
+    
     usuario = {"usuario":usuario,"contrasenia":contrasenia,"email" :email , "dni":dni,"numero_secreto":numero_secreto,"rol":rol}
+    
     list_usuario.append(usuario)
+    
     return True
 
 def mostrar_usuarios():
@@ -269,15 +267,15 @@ def verificar_rol(usuario_validar):
         elif usuario["usuario"] == usuario_validar and usuario["rol"] == 0:
             return False
         
+# cambiar de rol de usuario
+def cambiar_rol_usuario(busqueda):
+    
+    for usuario in list_usuario:
+        
+        if usuario["usuario"] == busqueda:
+            
+            usuario["rol"] = 1
+            print("se cambio el rol con exito")
 
-def ingresar_contrasenia():
-    
-    try:
-        import getpass
-        return getpass.getpass("Ingrese su contraseña: ")
-    except Exception as e:
-        print("Advertencia: getpass no funcionó, usando input común.")
-        return input("Ingrese su contraseña (visible): ")
-    
         
         
