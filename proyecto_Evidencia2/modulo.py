@@ -1,4 +1,5 @@
 from datetime import datetime
+import getpass
 list_dispositivo =[]
 list_habitaciones =[]
 list_usuario=[]
@@ -34,7 +35,7 @@ def buscar(busqueda):
         
         if dispositivo['nombre_dispositivo'] == busqueda:
             encontrado = True
-            return(dispositivo) 
+            print(dispositivo)
         
     if encontrado== False:
         print("No se encontro el dispositivo")
@@ -229,6 +230,9 @@ def eliminar_ubicacion(busqueda):
         if ubicaciones["ubicacion"] == busqueda:
             
             list_habitaciones.remove(ubicaciones)
+            print("Se  elimino con exito")
+
+
 
 def registrar_usuario(usuario,contrasenia,email,dni,numero_secreto,rol):
     # guardamos el diccionario dentro de la lista
@@ -265,7 +269,15 @@ def verificar_rol(usuario_validar):
         elif usuario["usuario"] == usuario_validar and usuario["rol"] == 0:
             return False
         
-        
-        
+
+def ingresar_contrasenia():
+    
+    try:
+        import getpass
+        return getpass.getpass("Ingrese su contraseña: ")
+    except Exception as e:
+        print("Advertencia: getpass no funcionó, usando input común.")
+        return input("Ingrese su contraseña (visible): ")
+    
         
         
