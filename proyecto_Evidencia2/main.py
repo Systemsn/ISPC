@@ -77,8 +77,9 @@ if __name__ == "__main__":
                                         print("::  Panel Iluminacion  ::")
                                         print(":::::::::::::::::::::::::")
                                         print("\nOpcion 1 : Prender luceso o Apagar Luces ")
-                                        print("Opcion 2 :  configurar Horario")
-                                        print ("Opcion 3 :  Volver al menu anterior ")
+                                        print("Opcion 2 : Mostrar Todas las luces")
+                                        print("Opcion 3 :  configurar Horario")
+                                        print ("Opcion 4 :  Volver al menu anterior ")
                                         opcion_activar = input("ingrese una opcion")
                                         
                                         if not opcion_activar.isdigit():
@@ -94,17 +95,21 @@ if __name__ == "__main__":
                                                 print(":::::::::::::::::::::::::::::::::")
                                                 print("1.Prender luces")
                                                 print("2.Apagar luces")
-                                                opcion = int(input("Ingrese una opcion: "))
+                                                opcion_lus = int(input("Ingrese una opcion: "))
                                 
                                 
-                                                if opcion ==1 :
+                                                if opcion_lus ==1 :
                                                     busqueda = input(" Que habitacion quiere prender las luces?: ")
                                     
                                                     modulo.prender_luces(busqueda)
-                                                elif opcion ==2:
+                                                elif opcion_lus ==2:
                                                     busqueda = input(" Que habitacion quiere pagar las luces?: ")
                                                     modulo.apagar_luces()
-                                            
+                                            case 2 : 
+                                                print("\n::::::::::::::::::::::::::::::")
+                                                print(":: Mostrar Todas las luces  ::")
+                                                print("::::::::::::::::::::::::::::::")
+                                                modulo.mostrar_luces()
                     
                                 case 3:
                                     while True: 
@@ -311,16 +316,24 @@ if __name__ == "__main__":
                                                 print(":::::::::::::::::::::::::::::::::")
                                                 print("1.Prender luces")
                                                 print("2.Apagar luces")
-                                                opcion = int(input("Ingrese una opcion: "))
+                                                opcion_prendido = input("Ingrese una opcion: ")
+                                                
+                                                if not opcion_prendido.isdigit():
+                                                    print("Digite un valor numerico")
+                                                    continue
+                                                else : 
+                                                    convertir_prendio_a_entero = int(opcion_prendido)
+                                        
 
-                                
-                                                if opcion ==1 :
-                                                    busqueda = input(" Que habitacion quiere prender las luces?: ")
+                                                match convertir_prendio_a_entero:
+                                                    case 1 : 
+                                                   
+                                                        busqueda = input(" Que habitacion quiere prender las luces?: ")
                                     
-                                                    modulo.prender_luces(busqueda)
-                                                elif opcion ==2:
-                                                    busqueda = input(" Que habitacion quiere pagar las luces?: ")
-                                                    modulo.apagar_luces()
+                                                        modulo.prender_luces(busqueda)
+                                                    case 2: 
+                                                        busqueda = input(" Que habitacion quiere pagar las luces?: ")
+                                                        modulo.apagar_luces()
                                             case 2:
                                 
                                                 print("\n:::::::::::::::::::::::::")
@@ -330,15 +343,15 @@ if __name__ == "__main__":
                                                 print("2.Mostrar habitaciones prendidas")
                                                 print("3.Mostrar todas las habitaciones")
                                                 print("4.Volver al menu anterior")
-                                                opcion = input("Ingrese una opcion: ")
+                                                opcion_mostrar_luces = input("Ingrese una opcion: ")
                                                 
                                                 if not opcion.isdigit():
                                                     print("Error Ingrese Digitos numericos")
                                                     continue
                                                 else :
-                                                    convertir= int(opcion)
+                                                    convertir_mostar_luces= int(opcion_mostrar_luces)
                                 
-                                                match opcion:
+                                                match convertir_mostar_luces:
                                                     case 1 : 
                                                         print("\n:::::::::::::::::::")
                                                         print(":: LUCES APAGADA ::")

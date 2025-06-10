@@ -66,6 +66,7 @@ def apagar_luces(busqueda):
         if dispositivo["tipo"] == 2 and dispositivo["ubicacion"] == busqueda:
             
             dispositivo["estado"]=0
+            print(f"se apago con exito {dispositivo["ubicacion"]}")
    
 #Funcion para Prender Luces           
 def prender_luces(busqueda):
@@ -75,6 +76,7 @@ def prender_luces(busqueda):
         if dispositivo["tipo"] == 2 and dispositivo["ubicacion"] == busqueda:
             
             dispositivo["estado"]=1
+            print(f"se prendio con exito {dispositivo["ubicacion"]}")
 
 #Funciones para mostrar luces prendidas
 def mostrar_luces_prendidos():
